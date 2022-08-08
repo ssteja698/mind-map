@@ -95,9 +95,7 @@ const DisplayMindMap = ({ mindMap, setCurrMindMap, setShowAddNodeModal }) => {
                 className={index === children.length - 1 ? "" : "me-3"}
               >
                 <DisplayMindMap
-                  mindMap={node}
-                  setCurrMindMap={setCurrMindMap}
-                  setShowAddNodeModal={setShowAddNodeModal}
+                  {...{ mindMap: node, setCurrMindMap, setShowAddNodeModal }}
                 />
               </div>
             </div>
