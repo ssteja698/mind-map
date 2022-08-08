@@ -1,0 +1,415 @@
+{"mindMaps": [
+  {
+    "name": "mind map description",
+    "description": "this depicts how mind map can be used",
+    "children": [
+      {
+        "name": "click on add new mind map",
+        "description": "",
+        "children": [
+          {
+            "name": "add details and click add btn",
+            "description": "",
+            "children": [
+              {
+                "name": "new mind map is created with the name given",
+                "description": "",
+                "children": [
+                  {
+                    "name": "click show current mind maps to view all mind maps",
+                    "description": "",
+                    "children": [
+                      {
+                        "name": "choose any created mind map and click on show mind map",
+                        "description": "",
+                        "children": [
+                          {
+                            "name": "hover over the name to view add btn for adding new nodes",
+                            "description": "",
+                            "children": [
+                              {
+                                "name": "you can create as many nodes as possible for a particular node",
+                                "description": "",
+                                "children": [
+                                  {
+                                    "name": "example",
+                                    "description": "",
+                                    "children": [
+                                      {
+                                        "name": "example - node1",
+                                        "description": "",
+                                        "children": [
+                                          {
+                                            "name": "subnode1",
+                                            "description": "",
+                                            "children": null,
+                                            "id": 3321441697892033,
+                                            "color": "#15C00C"
+                                          },
+                                          {
+                                            "name": "subnode2",
+                                            "description": "",
+                                            "children": null,
+                                            "id": 5141595522816638,
+                                            "color": "#1B4E3C"
+                                          }
+                                        ],
+                                        "id": 8979452147635814,
+                                        "color": "#26AD02"
+                                      },
+                                      {
+                                        "name": "example - node2",
+                                        "description": "",
+                                        "children": [
+                                          {
+                                            "name": "subnode3",
+                                            "description": "",
+                                            "children": null,
+                                            "id": 6044564724544832,
+                                            "color": "#F79A90"
+                                          }
+                                        ],
+                                        "id": 9327938289309384,
+                                        "color": "#D3FC2D"
+                                      },
+                                      {
+                                        "name": "example - node3",
+                                        "description": "",
+                                        "children": null,
+                                        "id": 74227618726281,
+                                        "color": "#2F16A2"
+                                      }
+                                    ],
+                                    "id": 370141502182712,
+                                    "color": "#368B21"
+                                  },
+                                  {
+                                    "name": "there are no rules imposed on how you should add nodes",
+                                    "description": "",
+                                    "children": [
+                                      {
+                                        "name": "just that they should be logically correct",
+                                        "description": "",
+                                        "children": null,
+                                        "id": 5866673621857601
+                                      }
+                                    ],
+                                    "id": 4262469463743397,
+                                    "color": "#F78338"
+                                  }
+                                ],
+                                "id": 2975897303965564,
+                                "color": "#940442"
+                              },
+                              {
+                                "name": "currently deletion is not supported",
+                                "description": "that feature will also be added soon",
+                                "children": [
+                                  {
+                                    "name": "hence be extra careful before adding a node into the mind map",
+                                    "description": "",
+                                    "children": null,
+                                    "id": 9208846299530446,
+                                    "color": "#483F63"
+                                  }
+                                ],
+                                "id": 3778733431505960,
+                                "color": "#5FD6C0"
+                              }
+                            ],
+                            "id": 5463077550211219,
+                            "color": "#869A7A"
+                          }
+                        ],
+                        "id": 6975290204715567,
+                        "color": "#34C20F"
+                      }
+                    ],
+                    "id": 4589923677144967,
+                    "color": "#902996"
+                  }
+                ],
+                "id": 5228688578114695,
+                "color": "#4752B0"
+              }
+            ],
+            "id": 954147105220912,
+            "color": "#BA265A"
+          }
+        ],
+        "id": 7963627048614514,
+        "color": "#B232E8"
+      }
+    ],
+    "id": 1,
+    "color": "#F8D131"
+  },
+  {
+    "name": "mind map displaying issue",
+    "description": "",
+    "children": [
+      {
+        "name": "show only the selected mind map",
+        "description": "",
+        "children": [
+          {
+            "name": "toggle showing a particular mind map by clicking the same btn",
+            "description": "",
+            "children": [
+              {
+                "name": "send a props named showMindMap which takes care of this",
+                "description": "",
+                "children": null,
+                "id": 3725362074151435,
+                "color": "#90BA0B"
+              }
+            ],
+            "id": 8877677585050368,
+            "color": "#097D17"
+          },
+          {
+            "name": "when other mind map is clicked, current one needs to be closed",
+            "description": "",
+            "children": [
+              {
+                "name": "showMindMap props should be updated accordingly",
+                "description": "",
+                "children": [
+                  {
+                    "name": "this props depends on selected mind map as well",
+                    "description": "",
+                    "children": [
+                      {
+                        "name": "is selected mind map props working fine?",
+                        "description": "",
+                        "children": [
+                          {
+                            "name": "yes it is working fine and we can use the same",
+                            "description": "",
+                            "children": [
+                              {
+                                "name": "let's implement",
+                                "description": "",
+                                "children": [
+                                  {
+                                    "name": "yes bro",
+                                    "description": "",
+                                    "children": [
+                                      {
+                                        "name": "final steps",
+                                        "description": "",
+                                        "children": [
+                                          {
+                                            "name": "showMindMap should be updated both on toggle btn as well as selectedMindMap props as well",
+                                            "description": "",
+                                            "children": [
+                                              {
+                                                "name": "here comes an issue",
+                                                "description": "",
+                                                "children": [
+                                                  {
+                                                    "name": "both showMindMap and selectedMindMap are interdependent",
+                                                    "description": "",
+                                                    "children": [
+                                                      {
+                                                        "name": "if showMindMap is updated first",
+                                                        "description": "let's discuss what happens in this case",
+                                                        "children": [
+                                                          {
+                                                            "name": "showMindMap is updated as per the toggle btn click",
+                                                            "description": "",
+                                                            "children": [
+                                                              {
+                                                                "name": "if showMindMap is true, selectedMindMap is set to that mindMap",
+                                                                "description": "",
+                                                                "children": [
+                                                                  {
+                                                                    "name": "what if other mind map is clicked now?",
+                                                                    "description": "",
+                                                                    "children": [
+                                                                      {
+                                                                        "name": "showMindMap is set to true for that mindMap",
+                                                                        "description": "",
+                                                                        "children": [
+                                                                          {
+                                                                            "name": "and selectedMindMap also gets changed",
+                                                                            "description": "",
+                                                                            "children": [
+                                                                              {
+                                                                                "name": "but what happens to showMindMap for the previous mind map?",
+                                                                                "description": "",
+                                                                                "children": [
+                                                                                  {
+                                                                                    "name": "selectedMindMap.id is not equal to mindMap.id",
+                                                                                    "description": "hence showMindMap should be updated to false",
+                                                                                    "children": [
+                                                                                      {
+                                                                                        "name": "can this be done?",
+                                                                                        "description": "",
+                                                                                        "children": null,
+                                                                                        "id": 2965112574917794,
+                                                                                        "color": "#391D8C"
+                                                                                      }
+                                                                                    ],
+                                                                                    "id": 8941283405658424,
+                                                                                    "color": "#8C217A"
+                                                                                  }
+                                                                                ],
+                                                                                "id": 6402284623406798,
+                                                                                "color": "#78468F"
+                                                                              }
+                                                                            ],
+                                                                            "id": 6950155809276539,
+                                                                            "color": "#97FAE3"
+                                                                          }
+                                                                        ],
+                                                                        "id": 5386567483772400,
+                                                                        "color": "#7F10A5"
+                                                                      }
+                                                                    ],
+                                                                    "id": 4768299990503526,
+                                                                    "color": "#29F63D"
+                                                                  }
+                                                                ],
+                                                                "id": 2226658869617952,
+                                                                "color": "#49D0F6"
+                                                              }
+                                                            ],
+                                                            "id": 9684507334686422,
+                                                            "color": "#7AC542"
+                                                          }
+                                                        ],
+                                                        "id": 2584852298741464,
+                                                        "color": "#97EB11"
+                                                      },
+                                                      {
+                                                        "name": "if selectedMindMap is updated first",
+                                                        "description": "",
+                                                        "children": [
+                                                          {
+                                                            "name": "selectedMindMap is updated as per toggle btn click",
+                                                            "description": "",
+                                                            "children": [
+                                                              {
+                                                                "name": "if selectedMindMap.id is equal to mindMap.id, showMindMap is set to true",
+                                                                "description": "",
+                                                                "children": [
+                                                                  {
+                                                                    "name": "now what if other mind map is clicked now?",
+                                                                    "description": "",
+                                                                    "children": [
+                                                                      {
+                                                                        "name": "selectedMindMap is updated as per toggle btn click",
+                                                                        "description": "and hence showMindMap is set as false for the prev mindMap",
+                                                                        "children": [
+                                                                          {
+                                                                            "name": "hence this is the way to solve the issue",
+                                                                            "description": "",
+                                                                            "children": [
+                                                                              {
+                                                                                "name": "figured out the issue. This mind map helped me to solve an issue related to mind map only",
+                                                                                "description": "",
+                                                                                "children": [
+                                                                                  {
+                                                                                    "name": "That's great and I'm thankful to myself",
+                                                                                    "description": "",
+                                                                                    "children": [
+                                                                                      {
+                                                                                        "name": "Hope this changes my life",
+                                                                                        "description": "",
+                                                                                        "children": null,
+                                                                                        "id": 5911789205828886,
+                                                                                        "color": "#AC5614"
+                                                                                      }
+                                                                                    ],
+                                                                                    "id": 6779559182090567,
+                                                                                    "color": "#53E1AB"
+                                                                                  }
+                                                                                ],
+                                                                                "id": 9710133310129084,
+                                                                                "color": "#F7A0E1"
+                                                                              }
+                                                                            ],
+                                                                            "id": 5576929408519846,
+                                                                            "color": "#53A75D"
+                                                                          },
+                                                                          {
+                                                                            "name": "but there is one more catch which was also easy to resolve",
+                                                                            "description": "that became easy bcos of this mind map way of solving it",
+                                                                            "children": null,
+                                                                            "id": 5719982315560499,
+                                                                            "color": "#E2D67E"
+                                                                          }
+                                                                        ],
+                                                                        "id": 6066861013923246,
+                                                                        "color": "#30278E"
+                                                                      }
+                                                                    ],
+                                                                    "id": 5705211870447315,
+                                                                    "color": "#7AB96C"
+                                                                  }
+                                                                ],
+                                                                "id": 8257434768332170,
+                                                                "color": "#91B821"
+                                                              }
+                                                            ],
+                                                            "id": 7904447183977712,
+                                                            "color": "#E62F61"
+                                                          }
+                                                        ],
+                                                        "id": 2280018459302271,
+                                                        "color": "#1BEC44"
+                                                      }
+                                                    ],
+                                                    "id": 1953909722808315,
+                                                    "color": "#F203D5"
+                                                  }
+                                                ],
+                                                "id": 5727268834749111,
+                                                "color": "#0A45EE"
+                                              }
+                                            ],
+                                            "id": 4494500184316581,
+                                            "color": "#D76F70"
+                                          }
+                                        ],
+                                        "id": 4612442396267387,
+                                        "color": "#D76F70"
+                                      }
+                                    ],
+                                    "id": 7983689824840738,
+                                    "color": "#AA1EDC"
+                                  }
+                                ],
+                                "id": 8958203779761491,
+                                "color": "#9B83F4"
+                              }
+                            ],
+                            "id": 40846399489058,
+                            "color": "#0A60DE"
+                          }
+                        ],
+                        "id": 7054428958645798,
+                        "color": "#43505C"
+                      }
+                    ],
+                    "id": 8705091386351200,
+                    "color": "#553242"
+                  }
+                ],
+                "id": 3129113629893010,
+                "color": "#3047C7"
+              }
+            ],
+            "id": 866830305682921,
+            "color": "#9D0997"
+          }
+        ],
+        "id": 5909141056104610,
+        "color": "#EC9977"
+      }
+    ],
+    "id": 2,
+    "color": "#422264"
+  }
+]}
