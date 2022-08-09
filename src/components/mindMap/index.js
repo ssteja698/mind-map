@@ -11,8 +11,12 @@ const MindMapBtn = ({ mindMap, selectedMindMap, setSelectedMindMap }) => {
   }, [mindMap]);
 
   useEffect(() => {
-    setShowMindMap(selectedMindMap?.id === mindMap?.id);
-  }, [mindMap?.id, selectedMindMap]);
+    if (selectedMindMap) {
+      setShowMindMap(selectedMindMap.id === mindMap.id);
+    } else {
+      setShowMindMap(false);
+    }
+  }, [mindMap.id, selectedMindMap]);
 
   return (
     <div

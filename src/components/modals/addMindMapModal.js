@@ -16,12 +16,34 @@ const AddMindMapModal = ({
   const renderInput = ({ id, fieldName }) => {
     return (
       <div
-        className="d-flex justify-content-between mb-2"
+        className="d-flex justify-content-between align-items-center mb-2"
         style={{ width: "65%" }}
       >
-        <label htmlFor={id}>{fieldName ? capitalize(fieldName) : ""}:</label>
+        <label
+          htmlFor={id}
+          className="form-label mb-0 inline-block text-gray-700"
+        >
+          {fieldName ? capitalize(fieldName) : ""}:
+        </label>
         <input
           id={id}
+          className="
+            form-control
+            block
+            w-full
+            px-3
+            py-1
+            text-base
+            font-normal
+            text-gray-700
+            bg-white bg-clip-padding
+            border border-solid border-gray-300
+            rounded
+            transition
+            ease-in-out
+            m-0 ms-3
+            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+          "
           value={mainNodeDetails[fieldName] || ""}
           onChange={(e) =>
             setMainNodeDetails((mainNodeDetails) => ({
@@ -29,6 +51,7 @@ const AddMindMapModal = ({
               [fieldName]: e.target.value,
             }))
           }
+          placeholder={`Enter ${capitalize(fieldName)}`}
         />
       </div>
     );

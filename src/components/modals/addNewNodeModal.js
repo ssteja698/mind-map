@@ -20,9 +20,9 @@ const AddNewNodeModal = ({
     if (
       currMindMap.name === mainMindMap.name &&
       currMindMap.description === mainMindMap.description &&
-      currMindMap.children?.length === mainMindMap.children?.length
+      currMindMap.children.length === mainMindMap.children.length
     ) {
-      mainMindMap.children ||= [];
+      mainMindMap.children = mainMindMap.children || [];
       mainMindMap.children.push(newNode);
       return mainMindMap.children;
     }
@@ -72,13 +72,36 @@ const AddNewNodeModal = ({
   const renderInput = ({ id, fieldName }) => {
     return (
       <div
-        className="d-flex justify-content-between mb-2"
+        className="d-flex justify-content-between align-items-center mb-2"
         style={{ width: "65%" }}
       >
-        <label htmlFor={id}>{fieldName ? capitalize(fieldName) : ""}:</label>
+        <label
+          htmlFor={id}
+          className="form-label mb-0 inline-block text-gray-700"
+        >
+          {fieldName ? capitalize(fieldName) : ""}:
+        </label>
         <input
           id={id}
           value={newNodeDetails ? newNodeDetails[fieldName] : ""}
+          className="
+            form-control
+            block
+            w-full
+            px-3
+            py-1
+            text-base
+            font-normal
+            text-gray-700
+            bg-white bg-clip-padding
+            border border-solid border-gray-300
+            rounded
+            transition
+            ease-in-out
+            m-0 ms-3
+            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+          "
+          placeholder={`Enter ${capitalize(fieldName)}`}
           onChange={(e) =>
             setNewNodeDetails((newNodeDetails) => ({
               ...newNodeDetails,
