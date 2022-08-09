@@ -12,7 +12,7 @@ const Modal = ({
   const modalContentRef = useRef(null);
 
   const handleContainerClick = (e) => {
-    if (!modalContentRef.current?.contains(e.target)) {
+    if (!modalContentRef.current.contains(e.target)) {
       onClose();
     }
   };

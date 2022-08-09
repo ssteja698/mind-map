@@ -6,7 +6,7 @@ import "./styles.css";
 const DisplayMindMap = ({ mindMap, setCurrMindMap, setShowAddNodeModal }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [showAddBtnForLeaf, setShowAddBtnForLeaf] = useState(false);
-  const mindMapColor = mindMap?.color || generateNewColor();
+  const mindMapColor = (mindMap && mindMap.color) || generateNewColor();
   const nameColor = invertColor(mindMapColor, true);
   const mindMapStyles = {
     width: "fit-content",
@@ -20,7 +20,7 @@ const DisplayMindMap = ({ mindMap, setCurrMindMap, setShowAddNodeModal }) => {
     return null;
   }
 
-  mindMap.color ||= mindMapColor;
+  mindMap.color = mindMap.color || mindMapColor;
 
   const renderVerticalLine = ({ nameColor }) => {
     return (
@@ -60,15 +60,15 @@ const DisplayMindMap = ({ mindMap, setCurrMindMap, setShowAddNodeModal }) => {
     );
   };
 
-  if (isOpen && mindMap?.children?.length) {
+  if (isOpen && mindMap.children && mindMap.children.length) {
     return (
       <div
         className="d-flex flex-column align-items-center m-auto p-2 rounded-3 text-nowrap overflow-auto"
         style={mindMapStyles}
       >
-        <h4 className="p-0 m-0">{mindMap?.name}</h4>
-        <RenderIf condition={mindMap?.description}>
-          <h5>{mindMap?.description}</h5>
+        <h4 className="p-0 m-0">{mindMap.name}</h4>
+        <RenderIf condition={mindMap.description}>
+          <h5>{mindMap.description}</h5>
         </RenderIf>
         {renderVerticalLine({ nameColor })}
         {renderAddBtn({})}
@@ -78,9 +78,10 @@ const DisplayMindMap = ({ mindMap, setCurrMindMap, setShowAddNodeModal }) => {
             borderTop: `2px solid ${nameColor}`,
           }}
         >
-          {mindMap?.children.map((node, index, children) => (
+          {mindMap.children.map((node, index, children) => (
             <div
-              key={`${node.name}--${node.description}--${node.children?.length}`}
+              key={`${node.name}--${node.description}--${node.children &&
+                node.children.length}`}
               className="d-flex flex-column align-items-center"
             >
               {renderVerticalLine({ nameColor })}
@@ -102,7 +103,7 @@ const DisplayMindMap = ({ mindMap, setCurrMindMap, setShowAddNodeModal }) => {
           ))}
         </div>
         <button
-          className="mt-3 cursor-pointer border-0 rounded-3"
+          className="mt-3 cursor-pointer btn btn-light"
           onClick={() => setIsOpen((isOpen) => !isOpen)}
         >
           Hide mind map
@@ -116,7 +117,7 @@ const DisplayMindMap = ({ mindMap, setCurrMindMap, setShowAddNodeModal }) => {
       className="d-flex flex-column justify-content-center align-items-center m-auto p-2 rounded-3"
       style={mindMapStyles}
       onMouseEnter={() => {
-        if (!mindMap?.children?.length) {
+        if (!(mindMap.children && mindMap.children.length)) {
           setShowAddBtnForLeaf(true);
         }
       }}
@@ -124,28 +125,37 @@ const DisplayMindMap = ({ mindMap, setCurrMindMap, setShowAddNodeModal }) => {
         if (showAddBtnForLeaf) setShowAddBtnForLeaf(false);
       }}
     >
-      <RenderIf condition={mindMap?.description || mindMap?.children?.length}>
-        <h4 className="p-0 m-0">{mindMap?.name}</h4>
-      </RenderIf>
       <RenderIf
-        condition={!(mindMap?.description || mindMap?.children?.length)}
+        condition={
+          mindMap.description || (mindMap.children && mindMap.children.length)
+        }
       >
-        <h5>{mindMap?.name}</h5>
+        <h4 className="p-0 m-0">{mindMap.name}</h4>
       </RenderIf>
       <RenderIf
         condition={
-          mindMap?.description &&
-          (!mindMap?.children || !mindMap?.children.length)
+          !(
+            mindMap.description ||
+            (mindMap.children && mindMap.children.length)
+          )
         }
       >
-        <h5>{mindMap?.description}</h5>
+        <h5>{mindMap.name}</h5>
+      </RenderIf>
+      <RenderIf
+        condition={
+          mindMap.description &&
+          (!mindMap.children || !(mindMap.children && mindMap.children.length))
+        }
+      >
+        <h5>{mindMap.description}</h5>
       </RenderIf>
       <RenderIf condition={showAddBtnForLeaf}>
         {renderAddBtn({ hideTooltip: true })}
       </RenderIf>
-      <RenderIf condition={mindMap?.children?.length}>
+      <RenderIf condition={mindMap.children && mindMap.children.length}>
         <button
-          className="mt-1 p-1 px-2 cursor-pointer border-0 rounded-3"
+          className="mt-1 cursor-pointer btn btn-light"
           onClick={() => setIsOpen((isOpen) => !isOpen)}
         >
           Show mind map
