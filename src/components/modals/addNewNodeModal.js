@@ -20,7 +20,8 @@ const AddNewNodeModal = ({
     if (
       currMindMap.name === mainMindMap.name &&
       currMindMap.description === mainMindMap.description &&
-      currMindMap.children.length === mainMindMap.children.length
+      (currMindMap.children && currMindMap.children.length) ===
+        (mainMindMap.children && mainMindMap.children.length)
     ) {
       mainMindMap.children = mainMindMap.children || [];
       mainMindMap.children.push(newNode);
