@@ -17,12 +17,7 @@ const AddNewNodeModal = ({
   });
 
   const modifyCurrMindMap = ({ currMindMap, mainMindMap, newNode }) => {
-    if (
-      currMindMap.name === mainMindMap.name &&
-      currMindMap.description === mainMindMap.description &&
-      (currMindMap.children && currMindMap.children.length) ===
-        (mainMindMap.children && mainMindMap.children.length)
-    ) {
+    if (currMindMap.id === mainMindMap.id) {
       mainMindMap.children = mainMindMap.children || [];
       mainMindMap.children.push(newNode);
       return mainMindMap.children;
@@ -57,7 +52,7 @@ const AddNewNodeModal = ({
       newNode: newNodeDetails,
     });
     await putData(
-      `http://localhost:4000/mindMaps/${selectedMindMap.id}`,
+      `http://localhost:5000/mindMaps/${selectedMindMap.id}`,
       mainMindMap
     );
     await fetchMindMaps();

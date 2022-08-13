@@ -16,7 +16,7 @@ function App() {
   const [showAddNodeModal, setShowAddNodeModal] = useState(false);
 
   async function fetchMindMaps() {
-    const mindMapsResp = await fetch("http://localhost:4000/mindMaps");
+    const mindMapsResp = await fetch("http://localhost:5000/mindMaps");
     const mindMapsJson = await mindMapsResp.json();
     setMindMaps(mindMapsJson);
     setShowAddMindMapModal(false);

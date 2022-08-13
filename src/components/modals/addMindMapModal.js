@@ -63,7 +63,7 @@ const AddMindMapModal = ({
       return;
     }
 
-    await postData("http://localhost:4000/mindMaps/", mainNodeDetails);
+    await postData("http://localhost:5000/mindMaps/", mainNodeDetails);
     await fetchMindMaps();
   };
 
