@@ -6,6 +6,7 @@ import AddNewNodeModal from "./components/modals/AddNewNodeModal/AddNewNodeModal
 import RenderIf from "./components/common/RenderIf";
 import MindMapBtn from "./components/mindMap";
 import DisplayMindMap from "./components/DisplayMindMap/DisplayMindMap";
+import { postData } from "./components/utils/helper";
 
 function App() {
   const [mindMaps, setMindMaps] = useState([]);
