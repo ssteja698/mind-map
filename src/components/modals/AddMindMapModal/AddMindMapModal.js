@@ -1,18 +1,14 @@
 import React, { useState } from "react";
-import Modal from "../common/Modal/Modal";
-import { capitalize, postData } from "../utils/helper";
+import Modal from "../../common/Modal/Modal";
+import { capitalize, postData } from "../../utils/helper";
 
 const AddMindMapModal = ({
-  fetchMindMaps,
   showAddMindMapModal,
   setShowAddMindMapModal,
+  mainNodeDetails,
+  setMainNodeDetails,
+  onAddMindMapBtnClick,
 }) => {
-  const [mainNodeDetails, setMainNodeDetails] = useState({
-    name: "",
-    description: "",
-    children: null,
-  });
-
   const renderInput = ({ id, fieldName }) => {
     return (
       <div
@@ -44,7 +40,7 @@ const AddMindMapModal = ({
             m-0 ms-3
             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
           "
-          value={mainNodeDetails[fieldName] || ""}
+          value={(mainNodeDetails && mainNodeDetails[fieldName]) || ""}
           onChange={(e) =>
             setMainNodeDetails((mainNodeDetails) => ({
               ...mainNodeDetails,
@@ -57,16 +53,6 @@ const AddMindMapModal = ({
     );
   };
 
-  const onAddBtnClick = async () => {
-    if (!mainNodeDetails.name) {
-      alert("A new mind map should have a name");
-      return;
-    }
-
-    await postData("http://localhost:5000/mindMaps/", mainNodeDetails);
-    await fetchMindMaps();
-  };
-
   const modalBody = () => {
     return (
       <div className="d-flex flex-column justify-content-center align-items-center">
@@ -76,7 +62,7 @@ const AddMindMapModal = ({
           <button
             className="btn btn-primary me-2"
             style={{ width: 100 }}
-            onClick={onAddBtnClick}
+            onClick={onAddMindMapBtnClick}
           >
             Add
           </button>

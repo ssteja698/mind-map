@@ -30,7 +30,11 @@ const Modal = ({
         <div className="modal__header">
           <h4 className="modal__title">{title}</h4>
           {onClose && (
-            <div className="modal__header__closeBtn" onClick={onClose}>
+            <div
+              className="modal__header__closeBtn"
+              data-testid="close-btn"
+              onClick={onClose}
+            >
               <i className="fa-solid fa-xmark"></i>
             </div>
           )}

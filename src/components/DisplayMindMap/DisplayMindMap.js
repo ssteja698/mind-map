@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import RenderIf from "../common/RenderIf";
 import { generateNewColor, invertColor } from "../utils/helper";
-import "./styles.css";
+import "../mindMap/styles.css";
 
 const DisplayMindMap = ({ mindMap, setCurrMindMap, setShowAddNodeModal }) => {
   const [isOpen, setIsOpen] = useState(false);

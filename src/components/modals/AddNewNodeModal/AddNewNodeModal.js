@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Modal from "../common/Modal/Modal";
-import { capitalize, putData } from "../utils/helper";
+import Modal from "../../common/Modal/Modal";
+import { capitalize, putData } from "../../utils/helper";
 
 const AddNewNodeModal = ({
   fetchMindMaps,

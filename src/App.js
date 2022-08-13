@@ -1,11 +1,11 @@
 // The entire credits goes to Sai Siva Teja B (https://github.com/ssteja698) as the entire idea and implementation belongs to him
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import AddMindMapModal from "./components/modals/addMindMapModal";
-import AddNewNodeModal from "./components/modals/addNewNodeModal";
+import AddMindMapModal from "./components/modals/AddMindMapModal/AddMindMapModal";
+import AddNewNodeModal from "./components/modals/AddNewNodeModal/AddNewNodeModal";
 import RenderIf from "./components/common/RenderIf";
 import MindMapBtn from "./components/mindMap";
-import DisplayMindMap from "./components/mindMap/displayMindMap";
+import DisplayMindMap from "./components/DisplayMindMap/DisplayMindMap";
 
 function App() {
   const [mindMaps, setMindMaps] = useState([]);
@@ -14,6 +14,11 @@ function App() {
   const [selectedMindMap, setSelectedMindMap] = useState(null);
   const [currMindMap, setCurrMindMap] = useState(null);
   const [showAddNodeModal, setShowAddNodeModal] = useState(false);
+  const [mainNodeDetails, setMainNodeDetails] = useState({
+    name: "",
+    description: "",
+    children: null,
+  });
 
   async function fetchMindMaps() {
     const mindMapsResp = await fetch("http://localhost:5000/mindMaps");
@@ -25,6 +30,16 @@ function App() {
   useEffect(() => {
     fetchMindMaps();
   }, []);
+
+  const onAddMindMapBtnClick = async () => {
+    if (!mainNodeDetails.name) {
+      alert("A new mind map should have a name");
+      return;
+    }
+
+    await postData("http://localhost:5000/mindMaps/", mainNodeDetails);
+    await fetchMindMaps();
+  };
 
   return (
     <div
@@ -79,9 +94,11 @@ function App() {
       </div>
       <AddMindMapModal
         {...{
-          fetchMindMaps,
           showAddMindMapModal,
           setShowAddMindMapModal,
+          mainNodeDetails,
+          setMainNodeDetails,
+          onAddMindMapBtnClick,
         }}
       />
       <AddNewNodeModal
